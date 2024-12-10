@@ -24,13 +24,13 @@ body {
     padding: 20px;
     position: relative;
     color: #fff;
-    display: flex; /* Flexbox para alinhar itens horizontalmente */
-    justify-content: center; /* Centraliza os itens */
-    align-items: center; /* Alinha os itens verticalmente */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .content .header .back-button {
-    position: absolute; /* Coloca a seta em uma posição fixa */
+    position: absolute; 
     top: 20px;
     left: 20px;
     width: 30px;
@@ -54,17 +54,17 @@ body {
     font-weight: bold;
     margin-top: 10px;
     text-transform: capitalize;
-    flex-grow: 1; /* Garante que o nome ocupe o espaço disponível */
-    text-align: center; /* Centraliza o nome dentro da header */
+    flex-grow: 1; 
+    text-align: center; 
 }
 
 .content .header .pokemon-number {
     font-size: 1rem;
     opacity: 0.8;
-    margin-right: 10px; /* Ajuste para dar um pouco de espaço à direita */
-    position: absolute; /* Posiciona o número no canto superior direito */
-    right: 20px; /* Ajuste a distância da borda direita */
-    top: 20px; /* Alinha ao topo do contêiner */
+    margin-right: 10px; 
+    position: absolute; 
+    right: 20px; 
+    top: 20px; 
 }
 
 .content .details {
