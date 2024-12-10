@@ -49,8 +49,23 @@ loadMoreButton.addEventListener('click', () => {
 // To Do
 
 document.addEventListener('click', (event) => {
-    if (event.target.closest('.pokemon')) { 
-        const pokemonName = event.target.closest('.pokemon').querySelector('.name').textContent;
-        window.location.href = `https://www.exemplo.com/${pokemonName}`;
+    if (event.target.closest('.pokemon')) {
+        const pokemonElement = event.target.closest('.pokemon');
+        const pokemonData = {
+            number: pokemonElement.querySelector('.number').textContent.trim(),
+            name: pokemonElement.querySelector('.name').textContent.trim(),
+            photo: pokemonElement.querySelector('img').src,
+            types: [...pokemonElement.querySelectorAll('.type')].map(type => type.textContent.trim()),
+        };
+
+        // Constrói a URL com os dados do Pokémon
+        const queryParams = new URLSearchParams({
+            number: pokemonData.number,
+            name: pokemonData.name,
+            photo: pokemonData.photo,
+            types: JSON.stringify(pokemonData.types), // Converte tipos para string JSON
+        }).toString();
+
+        window.location.href = `/pokemon-details.html?${queryParams}`;
     }
 });
