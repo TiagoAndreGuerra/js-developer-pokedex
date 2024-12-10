@@ -45,3 +45,12 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit)
     }
 })
+
+// To Do
+
+document.addEventListener('click', (event) => {
+    if (event.target.closest('.pokemon')) { 
+        const pokemonName = event.target.closest('.pokemon').querySelector('.name').textContent;
+        window.location.href = `https://www.exemplo.com/${pokemonName}`;
+    }
+});
