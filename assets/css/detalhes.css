@@ -24,10 +24,13 @@ body {
     padding: 20px;
     position: relative;
     color: #fff;
+    display: flex; /* Flexbox para alinhar itens horizontalmente */
+    justify-content: center; /* Centraliza os itens */
+    align-items: center; /* Alinha os itens verticalmente */
 }
 
 .content .header .back-button {
-    position: absolute;
+    position: absolute; /* Coloca a seta em uma posição fixa */
     top: 20px;
     left: 20px;
     width: 30px;
@@ -50,11 +53,18 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     margin-top: 10px;
+    text-transform: capitalize;
+    flex-grow: 1; /* Garante que o nome ocupe o espaço disponível */
+    text-align: center; /* Centraliza o nome dentro da header */
 }
 
 .content .header .pokemon-number {
     font-size: 1rem;
     opacity: 0.8;
+    margin-right: 10px; /* Ajuste para dar um pouco de espaço à direita */
+    position: absolute; /* Posiciona o número no canto superior direito */
+    right: 20px; /* Ajuste a distância da borda direita */
+    top: 20px; /* Alinha ao topo do contêiner */
 }
 
 .content .details {
@@ -69,8 +79,7 @@ body {
 }
 
 .content .details .types .type {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #fff;
+    color: #FFFFFF;
     padding: 5px 10px;
     border-radius: 12px;
     font-size: 0.9rem;
@@ -83,18 +92,10 @@ body {
     margin: 20px 0;
 }
 
-.pokemon-name {
-    text-transform: capitalize;
-  }
-
 .details {
     background-color: #f4f4f4;
     color: #333333;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-#pokemontypes {
-    background-color: var(--primary-color, #77c850);
 }

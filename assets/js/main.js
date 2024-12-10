@@ -6,9 +6,12 @@ const limit = 10
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
+    // Formatar o número com 3 dígitos
+    const formattedNumber = pokemon.number.padStart(3, '0');
+
     return `
         <li class="pokemon ${pokemon.type}">
-            <span class="number">#${pokemon.number}</span>
+            <span class="number">#${formattedNumber}</span>
             <span class="name">${pokemon.name}</span>
 
             <div class="detail">
@@ -52,7 +55,7 @@ document.addEventListener('click', (event) => {
     if (event.target.closest('.pokemon')) {
         const pokemonElement = event.target.closest('.pokemon');
         const pokemonData = {
-            number: pokemonElement.querySelector('.number').textContent.trim(),
+            number: pokemonElement.querySelector('.number').textContent.trim().replace('#', '').padStart(3, '0'),
             name: pokemonElement.querySelector('.name').textContent.trim(),
             photo: pokemonElement.querySelector('img').src,
             types: [...pokemonElement.querySelectorAll('.type')].map(type => type.textContent.trim()),
@@ -69,3 +72,14 @@ document.addEventListener('click', (event) => {
         window.location.href = `/pokemon-details.html?${queryParams}`;
     }
 });
+
+window.onload = function() {
+    // Obtém a cor de fundo do header
+    const headerBackgroundColor = window.getComputedStyle(document.querySelector('header')).backgroundColor;
+  
+    // Aplica a cor de fundo do header às divs de tipo de Pokémon
+    const typeDivs = document.querySelectorAll('.type');
+    typeDivs.forEach(function(div) {
+      div.style.backgroundColor = headerBackgroundColor;
+    });
+};
