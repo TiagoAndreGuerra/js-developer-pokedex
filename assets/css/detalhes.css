@@ -32,7 +32,7 @@ body {
     left: 20px;
     width: 30px;
     height: 30px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -82,3 +82,15 @@ body {
     height: auto;
     margin: 20px 0;
 }
+
+.pokemon-name {
+    text-transform: capitalize;
+  }
+
+.pokemontypes.types {
+    background-color: #f0f0f0;
+    color: #333333;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
